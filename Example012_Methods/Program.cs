@@ -123,7 +123,7 @@ newText = Replace(newText, 'С', 'с' );
 Console.WriteLine(newText);
 Console.WriteLine();
 
-// Задача сортировка одномерного массива, по возрастанию.
+// Задача сортировка одномерного массива, по возрастанию, от большего к меньшему элементу.
 
 int[] arr = { 1, 5, 4, 3, 2, 6, 7, 1, 3 };
 
@@ -139,12 +139,12 @@ void PrintArray(int[] array)
 
 void SelectionSort(int[] array)
 {
-    for (int i = 0; i < array.Length - 1; i++)
+    for (int i = 0; i < array.Length - 1; i++) // -1 нужна что бы выровнить общее кол-во элементов массива Length
     {
         int minPosition = i;
-        for (int j = i + 1; j < array.Length; j++)
+        for (int j = i + 1; j < array.Length; j++)    //прибавляем i + 1 -необходимо для последовательной сортировки j
         {
-            if(array[j] < array[minPosition]) minPosition = j;
+            if(array[j] < array[minPosition]) minPosition = j; //если поменять знак меньше на больше, то масив выстраиться от максимального к минимальному значению
         }
         int temporary = array[i];
         array[i] = array[minPosition];
